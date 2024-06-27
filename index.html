@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tela de Cadastro</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Estilos padrão */
+    body {
+      background-color: #f8f9fa; /* Cor de fundo padrão */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .register-form {
+      width: 340px;
+      margin: 50px auto;
+      background: #ffffff; /* Fundo do formulário claro */
+      padding: 30px;
+      border-radius: 15px; /* Cantos arredondados */
+      box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.1);
+    }
+    .register-form h2 {
+      margin-bottom: 20px;
+      text-align: center;
+      color: #333333;
+    }
+    .form-control, .btn {
+      min-height: 46px;
+      border-radius: 5px;
+    }
+    .btn {        
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    /* Estilos para tema escuro */
+    body.dark-mode {
+      background-color: #343a40; /* Cor de fundo para tema escuro */
+      color: #ffffff; /* Cor do texto para tema escuro */
+    }
+    .dark-mode .register-form {
+      background: #495057; /* Fundo do formulário para tema escuro */
+      color: #ffffff; /* Cor do texto no formulário para tema escuro */
+    }
+    .dark-mode .btn {
+      background-color: #343a40;
+      color: #ffffff;
+      border-color: #343a40;
+    }
+
+    /* Alinhamento do botão */
+    .align-right {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 10px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="register-form">
+    <div class="align-right">
+      <button class="btn btn-light btn-sm ml-auto" onclick="toggleTheme()">Tema</button>
+    </div>
+    <form action="/auth/register" method="post">
+      <h2>Cadastro</h2>       
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Nome completo" required="required">
+      </div>
+      <div class="form-group">
+        <input type="email" class="form-control" placeholder="E-mail" required="required">
+      </div>
+      <div class="form-group">
+        <input type="date" class="form-control" placeholder="Data de aniversário" required="required">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="CPF" required="required">
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-control" placeholder="Senha" required="required">
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block">Registrar</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Bootstrap JS (opcional, apenas se precisar de funcionalidades do Bootstrap que dependam de JS) -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
+</body>
+</html>
